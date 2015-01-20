@@ -52,11 +52,13 @@
 
 
 
+    <bean id="myDataSource" class="com.ganesh.spring.tx.dao.RoutingDataSource" />
+
 
     <!-- Creating TransactionManager Bean, since JDBC we are creating of type
         DataSourceTransactionManager -->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="myDataSource"/>
     </bean>
 </beans>

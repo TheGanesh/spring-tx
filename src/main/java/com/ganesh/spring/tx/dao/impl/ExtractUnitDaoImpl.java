@@ -23,7 +23,7 @@ import java.util.List;
 public class ExtractUnitDaoImpl implements ExtractUnitDao {
 
     @Autowired
-    DataSource dataSource;
+    DataSource myDataSource;
 
     @Override
     @Transactional(propagation= Propagation.REQUIRED)
@@ -51,7 +51,7 @@ public class ExtractUnitDaoImpl implements ExtractUnitDao {
 
 
     public NamedParameterJdbcTemplate getJdbcTemplate() {
-        return new NamedParameterJdbcTemplate(dataSource);
+        return new NamedParameterJdbcTemplate(myDataSource);
     }
 
 }
